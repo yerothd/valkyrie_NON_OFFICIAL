@@ -20,11 +20,11 @@
 #ifndef __VK_OPTION_WIDGETS_H
 #define __VK_OPTION_WIDGETS_H
 
-#include <QHBoxLayout>
-#include <QLabel>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QString>
-#include <QWidget>
-#include <QVBoxLayout>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QVBoxLayout>
 
 #include <iostream>
 using namespace std;

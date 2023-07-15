@@ -18,9 +18,9 @@
 **
 ****************************************************************************/
 
-#include <QFileDialog>
-#include <QMenuBar>
-#include <QToolBar>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QToolBar>
 
 #include "toolview/toolview.h"
 #include "mainwindow.h"

@@ -21,9 +21,9 @@
 #ifndef __VALGRIND_OPTIONS_PAGE_H
 #define __VALGRIND_OPTIONS_PAGE_H
 
-#include <QGroupBox>
-#include <QListWidget>
-#include <QPushButton>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QStringList>
 
 #include "options/vk_options_page.h"

@@ -23,9 +23,9 @@
 #include "options/vk_option.h"
 #include "utils/vk_utils.h"
 
-#include <QComboBox>
-#include <QHBoxLayout>
-#include <QWidget>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QWidget>
 #include <QString>
 
 

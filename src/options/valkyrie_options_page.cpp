@@ -18,11 +18,11 @@
 **
 ****************************************************************************/
 
-#include <QApplication>
-#include <QFileDialog>
-#include <QFontDialog>
-#include <QLabel>
-#include <QVBoxLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QFontDialog>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QVBoxLayout>
 
 #include "help/help_context.h"
 #include "help/help_urls.h"

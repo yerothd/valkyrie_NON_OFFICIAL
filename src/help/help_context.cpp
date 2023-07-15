@@ -18,8 +18,8 @@
 **
 ****************************************************************************/
 
-#include <QApplication>
-#include <QDesktopWidget>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QDesktopWidget>
 #include <QMouseEvent>
 
 

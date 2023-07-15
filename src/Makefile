@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = @echo compiling $< && gcc
 CXX           = @echo compiling $< && g++
-DEFINES       = -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -Imoc -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -Imoc -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = valkyrie2.0.1.SVN
 DISTDIR = /home/yeri/valkyrie_yr/src/obj/valkyrie2.0.1.SVN
 LINK          = @echo linking $@ && g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Xml.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Xml.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -270,7 +270,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -283,6 +283,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qmake_use.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/file_copies.prf \
@@ -455,7 +456,7 @@ Makefile: src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /us
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -468,6 +469,7 @@ Makefile: src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /us
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qmake_use.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/file_copies.prf \
@@ -548,7 +550,7 @@ Makefile: src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /us
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
-../.qmake.stash:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -561,6 +563,7 @@ Makefile: src.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /us
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qmake_use.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/file_copies.prf:
@@ -598,6 +601,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -677,23 +681,23 @@ moc/moc_mainwindow.cpp: mainwindow.h \
 		options/vk_options_dialog.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc mainwindow.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc/moc_mainwindow.cpp
+	@echo moc mainwindow.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc/moc_mainwindow.cpp
 
 moc/moc_help_about.cpp: help/help_about.h \
 		help/help_handbook.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc help/help_about.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include help/help_about.h -o moc/moc_help_about.cpp
+	@echo moc help/help_about.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include help/help_about.h -o moc/moc_help_about.cpp
 
 moc/moc_help_context.cpp: help/help_context.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc help/help_context.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include help/help_context.h -o moc/moc_help_context.cpp
+	@echo moc help/help_context.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include help/help_context.h -o moc/moc_help_context.cpp
 
 moc/moc_help_handbook.cpp: help/help_handbook.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc help/help_handbook.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include help/help_handbook.h -o moc/moc_help_handbook.cpp
+	@echo moc help/help_handbook.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include help/help_handbook.h -o moc/moc_help_handbook.cpp
 
 moc/moc_helgrind_object.cpp: objects/helgrind_object.h \
 		objects/tool_object.h \
@@ -705,7 +709,7 @@ moc/moc_helgrind_object.cpp: objects/helgrind_object.h \
 		utils/vk_logpoller.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc objects/helgrind_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/helgrind_object.h -o moc/moc_helgrind_object.cpp
+	@echo moc objects/helgrind_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/helgrind_object.h -o moc/moc_helgrind_object.cpp
 
 moc/moc_memcheck_object.cpp: objects/memcheck_object.h \
 		objects/tool_object.h \
@@ -717,7 +721,7 @@ moc/moc_memcheck_object.cpp: objects/memcheck_object.h \
 		utils/vk_logpoller.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc objects/memcheck_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/memcheck_object.h -o moc/moc_memcheck_object.cpp
+	@echo moc objects/memcheck_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/memcheck_object.h -o moc/moc_memcheck_object.cpp
 
 moc/moc_tool_object.cpp: objects/tool_object.h \
 		objects/vk_objects.h \
@@ -728,7 +732,7 @@ moc/moc_tool_object.cpp: objects/tool_object.h \
 		utils/vk_logpoller.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc objects/tool_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/tool_object.h -o moc/moc_tool_object.cpp
+	@echo moc objects/tool_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/tool_object.h -o moc/moc_tool_object.cpp
 
 moc/moc_valkyrie_object.cpp: objects/valkyrie_object.h \
 		objects/valgrind_object.h \
@@ -741,13 +745,13 @@ moc/moc_valkyrie_object.cpp: objects/valkyrie_object.h \
 		utils/vk_logpoller.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc objects/valkyrie_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/valkyrie_object.h -o moc/moc_valkyrie_object.cpp
+	@echo moc objects/valkyrie_object.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/valkyrie_object.h -o moc/moc_valkyrie_object.cpp
 
 moc/moc_vk_objects.cpp: objects/vk_objects.h \
 		options/vk_option.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc objects/vk_objects.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/vk_objects.h -o moc/moc_vk_objects.cpp
+	@echo moc objects/vk_objects.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include objects/vk_objects.h -o moc/moc_vk_objects.cpp
 
 moc/moc_helgrind_options_page.cpp: options/helgrind_options_page.h \
 		options/vk_options_page.h \
@@ -755,7 +759,7 @@ moc/moc_helgrind_options_page.cpp: options/helgrind_options_page.h \
 		options/vk_option.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/helgrind_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/helgrind_options_page.h -o moc/moc_helgrind_options_page.cpp
+	@echo moc options/helgrind_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/helgrind_options_page.h -o moc/moc_helgrind_options_page.cpp
 
 moc/moc_memcheck_options_page.cpp: options/memcheck_options_page.h \
 		options/vk_options_page.h \
@@ -763,24 +767,24 @@ moc/moc_memcheck_options_page.cpp: options/memcheck_options_page.h \
 		options/vk_option.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/memcheck_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/memcheck_options_page.h -o moc/moc_memcheck_options_page.cpp
+	@echo moc options/memcheck_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/memcheck_options_page.h -o moc/moc_memcheck_options_page.cpp
 
 moc/moc_vk_option.cpp: options/vk_option.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/vk_option.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_option.h -o moc/moc_vk_option.cpp
+	@echo moc options/vk_option.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_option.h -o moc/moc_vk_option.cpp
 
 moc/moc_vk_options_dialog.cpp: options/vk_options_dialog.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/vk_options_dialog.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_options_dialog.h -o moc/moc_vk_options_dialog.cpp
+	@echo moc options/vk_options_dialog.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_options_dialog.h -o moc/moc_vk_options_dialog.cpp
 
 moc/moc_vk_options_page.cpp: options/vk_options_page.h \
 		objects/vk_objects.h \
 		options/vk_option.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/vk_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_options_page.h -o moc/moc_vk_options_page.cpp
+	@echo moc options/vk_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_options_page.h -o moc/moc_vk_options_page.cpp
 
 moc/moc_valgrind_options_page.cpp: options/valgrind_options_page.h \
 		options/vk_options_page.h \
@@ -789,7 +793,7 @@ moc/moc_valgrind_options_page.cpp: options/valgrind_options_page.h \
 		options/suppressions.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/valgrind_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/valgrind_options_page.h -o moc/moc_valgrind_options_page.cpp
+	@echo moc options/valgrind_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/valgrind_options_page.h -o moc/moc_valgrind_options_page.cpp
 
 moc/moc_valkyrie_options_page.cpp: options/valkyrie_options_page.h \
 		options/vk_options_page.h \
@@ -797,60 +801,60 @@ moc/moc_valkyrie_options_page.cpp: options/valkyrie_options_page.h \
 		options/vk_option.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/valkyrie_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/valkyrie_options_page.h -o moc/moc_valkyrie_options_page.cpp
+	@echo moc options/valkyrie_options_page.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/valkyrie_options_page.h -o moc/moc_valkyrie_options_page.cpp
 
 moc/moc_vk_suppressions_dialog.cpp: options/vk_suppressions_dialog.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/vk_suppressions_dialog.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_suppressions_dialog.h -o moc/moc_vk_suppressions_dialog.cpp
+	@echo moc options/vk_suppressions_dialog.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/vk_suppressions_dialog.h -o moc/moc_vk_suppressions_dialog.cpp
 
 moc/moc_opt_base_widget.cpp: options/widgets/opt_base_widget.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/widgets/opt_base_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_base_widget.h -o moc/moc_opt_base_widget.cpp
+	@echo moc options/widgets/opt_base_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_base_widget.h -o moc/moc_opt_base_widget.cpp
 
 moc/moc_opt_cb_widget.cpp: options/widgets/opt_cb_widget.h \
 		options/widgets/opt_base_widget.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/widgets/opt_cb_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_cb_widget.h -o moc/moc_opt_cb_widget.cpp
+	@echo moc options/widgets/opt_cb_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_cb_widget.h -o moc/moc_opt_cb_widget.cpp
 
 moc/moc_opt_ck_widget.cpp: options/widgets/opt_ck_widget.h \
 		options/widgets/opt_base_widget.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/widgets/opt_ck_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_ck_widget.h -o moc/moc_opt_ck_widget.cpp
+	@echo moc options/widgets/opt_ck_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_ck_widget.h -o moc/moc_opt_ck_widget.cpp
 
 moc/moc_opt_le_widget.cpp: options/widgets/opt_le_widget.h \
 		options/widgets/opt_base_widget.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/widgets/opt_le_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_le_widget.h -o moc/moc_opt_le_widget.cpp
+	@echo moc options/widgets/opt_le_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_le_widget.h -o moc/moc_opt_le_widget.cpp
 
 moc/moc_opt_sp_widget.cpp: options/widgets/opt_sp_widget.h \
 		options/widgets/opt_base_widget.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/widgets/opt_sp_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_sp_widget.h -o moc/moc_opt_sp_widget.cpp
+	@echo moc options/widgets/opt_sp_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_sp_widget.h -o moc/moc_opt_sp_widget.cpp
 
 moc/moc_opt_lb_widget.cpp: options/widgets/opt_lb_widget.h \
 		options/widgets/opt_base_widget.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc options/widgets/opt_lb_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_lb_widget.h -o moc/moc_opt_lb_widget.cpp
+	@echo moc options/widgets/opt_lb_widget.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include options/widgets/opt_lb_widget.h -o moc/moc_opt_lb_widget.cpp
 
 moc/moc_helgrindview.cpp: toolview/helgrindview.h \
 		toolview/toolview.h \
 		toolview/vglogview.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc toolview/helgrindview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/helgrindview.h -o moc/moc_helgrindview.cpp
+	@echo moc toolview/helgrindview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/helgrindview.h -o moc/moc_helgrindview.cpp
 
 moc/moc_logviewfilter_mc.cpp: toolview/logviewfilter_mc.h \
 		toolview/vglogview.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc toolview/logviewfilter_mc.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/logviewfilter_mc.h -o moc/moc_logviewfilter_mc.cpp
+	@echo moc toolview/logviewfilter_mc.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/logviewfilter_mc.h -o moc/moc_logviewfilter_mc.cpp
 
 moc/moc_memcheckview.cpp: toolview/memcheckview.h \
 		toolview/toolview.h \
@@ -858,44 +862,46 @@ moc/moc_memcheckview.cpp: toolview/memcheckview.h \
 		toolview/logviewfilter_mc.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc toolview/memcheckview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/memcheckview.h -o moc/moc_memcheckview.cpp
+	@echo moc toolview/memcheckview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/memcheckview.h -o moc/moc_memcheckview.cpp
 
 moc/moc_memcheck_logview.cpp: toolview/memcheck_logview.h \
 		toolview/vglogview.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc toolview/memcheck_logview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/memcheck_logview.h -o moc/moc_memcheck_logview.cpp
+	@echo moc toolview/memcheck_logview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/memcheck_logview.h -o moc/moc_memcheck_logview.cpp
 
 moc/moc_toolview.cpp: toolview/toolview.h \
 		toolview/vglogview.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc toolview/toolview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/toolview.h -o moc/moc_toolview.cpp
+	@echo moc toolview/toolview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/toolview.h -o moc/moc_toolview.cpp
 
 moc/moc_vglogview.cpp: toolview/vglogview.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc toolview/vglogview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/vglogview.h -o moc/moc_vglogview.cpp
+	@echo moc toolview/vglogview.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include toolview/vglogview.h -o moc/moc_vglogview.cpp
 
 moc/moc_vk_logpoller.cpp: utils/vk_logpoller.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc utils/vk_logpoller.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include utils/vk_logpoller.h -o moc/moc_vk_logpoller.cpp
+	@echo moc utils/vk_logpoller.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include utils/vk_logpoller.h -o moc/moc_vk_logpoller.cpp
 
 moc/moc_vk_messages.cpp: utils/vk_messages.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc utils/vk_messages.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include utils/vk_messages.h -o moc/moc_vk_messages.cpp
+	@echo moc utils/vk_messages.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include utils/vk_messages.h -o moc/moc_vk_messages.cpp
 
 moc/moc_vknewprojectdialog.cpp: utils/vknewprojectdialog.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	@echo moc utils/vknewprojectdialog.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include utils/vknewprojectdialog.h -o moc/moc_vknewprojectdialog.cpp
+	@echo moc utils/vknewprojectdialog.h && /usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeri/valkyrie_yr/src/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeri/valkyrie_yr/src -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtXml -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include utils/vknewprojectdialog.h -o moc/moc_vknewprojectdialog.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
+compiler_uic_make_all:
+compiler_uic_clean:
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:

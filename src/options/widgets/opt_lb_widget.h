@@ -20,7 +20,7 @@
 #ifndef __VK_OPTION_LB_WIDGET_H
 #define __VK_OPTION_LB_WIDGET_H
 
-#include <QListWidget>
+#include <QtWidgets/QListWidget>
 
 #include "opt_base_widget.h"
 

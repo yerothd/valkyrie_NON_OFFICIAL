@@ -33,7 +33,7 @@
 //#include "options/widgets/opt_ck_widget.h"
 
 
-#include <QGroupBox>
+#include <QtWidgets/QGroupBox>
 
 
 

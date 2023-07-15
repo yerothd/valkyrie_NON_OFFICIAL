@@ -23,8 +23,8 @@
 
 #include "toolview/vglogview.h"
 
-#include <QMainWindow>
-#include <QStackedWidget>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QStackedWidget>
 #include <QList>
 
 

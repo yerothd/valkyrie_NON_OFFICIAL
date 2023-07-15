@@ -19,9 +19,9 @@
 ****************************************************************************/
 
 #include <QDir>
-#include <QFileDialog>
-#include <QListWidget>
-#include <QTabWidget>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QTabWidget>
 
 #include "help/help_context.h"
 #include "help/help_urls.h"

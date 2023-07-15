@@ -24,10 +24,10 @@
 #include "options/vk_options_page.h"
 #include "utils/vk_utils.h"
 
-#include <QApplication>
-#include <QDialogButtonBox>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QDialogButtonBox>
 #include <QFontMetrics>
-#include <QScrollArea>
+#include <QtWidgets/QScrollArea>
 
 
 #define SIZE_COL1 "XXXXXXXXX" // for a font-dependent size

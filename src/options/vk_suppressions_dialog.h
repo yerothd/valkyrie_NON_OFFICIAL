@@ -20,12 +20,12 @@
 #ifndef VK_SUPPRESSIONS_DIALOG_H
 #define VK_SUPPRESSIONS_DIALOG_H
 
-#include <QComboBox>
-#include <QDialog>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QVBoxLayout>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 
 
 // ============================================================

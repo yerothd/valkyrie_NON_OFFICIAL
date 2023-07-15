@@ -20,11 +20,11 @@
 #ifndef VKNEWPROJECTDIALOG_H
 #define VKNEWPROJECTDIALOG_H
 
-#include <QDialog>
-#include <QDialogButtonBox>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
 #include <QString>
-#include <QLabel>
-#include <QLineEdit>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 
 
 class VkNewProjectDialog : public QDialog

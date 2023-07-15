@@ -22,11 +22,11 @@
 
 #include "toolview/vglogview.h"
 
-#include <QComboBox>
-#include <QPushButton>
-#include <QStackedWidget>
-#include <QTreeWidget>
-#include <QWidget>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QWidget>
 
 
 class LogViewFilterMC : public QWidget

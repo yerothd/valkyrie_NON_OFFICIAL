@@ -22,11 +22,11 @@
 #ifndef __VK_OPTIONS_DIALOG_H
 #define __VK_OPTIONS_DIALOG_H
 
-#include <QDialog>
-#include <QDialogButtonBox>
-#include <QListWidget>
-#include <QStackedWidget>
-#include <QWidget>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QWidget>
 
 
 // ============================================================

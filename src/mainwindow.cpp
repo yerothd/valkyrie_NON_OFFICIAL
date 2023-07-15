@@ -18,16 +18,16 @@
 **
 ****************************************************************************/
 
-#include <QApplication>
+#include <QtWidgets/QApplication>
 #include <QColor>
-#include <QColorGroup>
+//#include <QColorGroup>
 #include <QEvent>
-#include <QFileDialog>
-#include <QGroupBox>
-#include <QInputDialog>
-#include <QMenu>
-#include <QMenuBar>
-#include <QToolBar>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QInputDialog>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QToolBar>
 
 #include "mainwindow.h"
 #include "toolview/memcheckview.h"

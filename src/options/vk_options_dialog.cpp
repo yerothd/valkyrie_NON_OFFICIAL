@@ -29,9 +29,9 @@
 #include "utils/vk_messages.h"
 #include "utils/vk_utils.h"
 
-#include <QApplication>
-#include <QLabel>
-#include <QPushButton>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 
 

@@ -21,13 +21,13 @@
 #ifndef __VK_VGLOGVIEW_H
 #define __VK_VGLOGVIEW_H
 
-#include <QColorGroup>
+//#include <QColorGroup>
 #include <QDateTime>
 #include <QObject>
 #include <QPainter>
 #include <QPixmap>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTreeWidgetItem>
 
 // QDom stuff
 #include <QDomDocument>

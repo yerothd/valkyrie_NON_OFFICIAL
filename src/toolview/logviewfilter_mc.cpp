@@ -20,9 +20,9 @@
 #include "toolview/logviewfilter_mc.h"
 #include "utils/vk_utils.h"
 
-#include <QAction>
-#include <QHBoxLayout>
-#include <QLineEdit>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
 #include <QMap>
 #include <QTimer>
 

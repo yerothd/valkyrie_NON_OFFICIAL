@@ -18,8 +18,8 @@
 ****************************************************************************/
 
 #include <QDir>
-#include <QFileDialog>
-#include <QMenu>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QMenu>
 
 #include "help/help_context.h"
 #include "help/help_urls.h"

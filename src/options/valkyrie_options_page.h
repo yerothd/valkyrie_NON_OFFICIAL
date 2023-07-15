@@ -21,7 +21,7 @@
 #ifndef __VALKYRIE_OPTIONS_PAGE_H
 #define __VALKYRIE_OPTIONS_PAGE_H
 
-#include <QGroupBox>
+#include <QtWidgets/QGroupBox>
 
 #include "options/vk_options_page.h"
 

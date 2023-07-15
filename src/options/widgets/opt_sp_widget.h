@@ -20,7 +20,7 @@
 #ifndef __VK_OPTION_SP_WIDGET_H
 #define __VK_OPTION_SP_WIDGET_H
 
-#include <QSpinBox>
+#include <QtWidgets/QSpinBox>
 
 #include "opt_base_widget.h"
 

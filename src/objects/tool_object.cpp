@@ -42,12 +42,14 @@ stopProcess()
        ->(timeout)-> killProc() ->(QtProc::kill)-> processDone() -> DONE
 */
 
+#include <unistd.h>
+
 #include "objects/tool_object.h"
 #include "toolview/toolview.h"
 #include "utils/vk_config.h"
 #include "utils/vk_utils.h"
 
-#include <QFileDialog>
+#include <QtWidgets/QFileDialog>
 #include <QKeySequence>
 #include <QString>
 #include <QStringList>
@@ -63,7 +65,7 @@ stopProcess()
 #include "options/vk_option.h"   // PERROR* and friends
 //#include "vk_file_utils.h"       // FileCopy()
 
-#include <QApplication>
+#include <QtWidgets/QApplication>
 #include <QDir>
 #include <QTimer>
 #endif

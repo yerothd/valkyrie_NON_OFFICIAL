@@ -23,8 +23,8 @@
 
 #include "help/help_handbook.h"   // VkTextBrowser
 
-#include <QDialog>
-#include <QTabWidget>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QTabWidget>
 
 namespace HELPABOUT
 {

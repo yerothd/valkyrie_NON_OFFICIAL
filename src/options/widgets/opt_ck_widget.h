@@ -20,7 +20,7 @@
 #ifndef __VK_OPTION_CK_WIDGET_H
 #define __VK_OPTION_CK_WIDGET_H
 
-#include <QCheckBox>
+#include <QtWidgets/QCheckBox>
 
 #include "opt_base_widget.h"
 

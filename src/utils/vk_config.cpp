@@ -24,12 +24,13 @@
 #include "utils/vk_defines.h"  // build-generated file.
 #include "utils/vk_utils.h"
 
+#include <unistd.h> //YERI getuid
 #include <pwd.h>     // getpwuid
 
 #include <QColor>
 #include <QDir>
 #include <QFile>
-#include <QFileDialog>
+#include <QtWidgets/QFileDialog>
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QPoint>

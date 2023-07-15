@@ -20,7 +20,7 @@
 #ifndef __VK_OPTION_CB_WIDGET_H
 #define __VK_OPTION_CB_WIDGET_H
 
-#include <QComboBox>
+#include <QtWidgets/QComboBox>
 
 #include "opt_base_widget.h"
 

@@ -21,16 +21,16 @@
 #ifndef __MAINWINDOW_H
 #define __MAINWINDOW_H
 
-#include <QActionGroup>
+#include <QtWidgets/QActionGroup>
 #include <QEvent>
 #include <QFont>
-#include <QLabel>
-#include <QMainWindow>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QMainWindow>
 #include <QPalette>
-#include <QPlainTextEdit>
-#include <QStatusBar>
-#include <QToolButton>
-#include <QVBoxLayout>
+#include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolButton>
+#include <QtWidgets/QVBoxLayout>
 
 #include "help/help_handbook.h"
 #include "objects/valkyrie_object.h"

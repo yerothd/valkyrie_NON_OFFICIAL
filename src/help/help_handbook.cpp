@@ -23,17 +23,17 @@
 //#include "vk_messages.h"
 #include "utils/vk_utils.h"
 
-#include "QApplication"
-#include "QDockWidget"
+#include <QtWidgets/QApplication>
+#include "QtWidgets/QDockWidget"
 #include "QFile"
-#include "QFileDialog"
-#include "QMenu"
-#include "QPrinter"
+#include <QtWidgets/QFileDialog>
+#include "QtWidgets/QMenu"
+#include <QtPrintSupport/QPrinter>
 #include "QProcess"
 #include "QString"
 #include "QStringList"
 #include "QTextStream"
-#include "QToolBar"
+#include <QtWidgets/QToolBar>
 
 
 #define BOOKMARK_NAME_ADDR_DIVIDER '|'

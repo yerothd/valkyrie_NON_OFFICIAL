@@ -20,8 +20,8 @@
 #ifndef __VK_OPTION_LE_WIDGET_H
 #define __VK_OPTION_LE_WIDGET_H
 
-#include <QLineEdit>
-#include <QPushButton>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 
 #include "opt_base_widget.h"
 

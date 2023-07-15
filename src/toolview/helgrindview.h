@@ -24,9 +24,9 @@
 #include "toolview/toolview.h"
 #include "toolview/vglogview.h"
 
-#include <QMenu>
-#include <QTreeWidget>
-#include <QToolButton>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QToolButton>
 
 
 // ============================================================

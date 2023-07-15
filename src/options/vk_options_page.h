@@ -23,11 +23,11 @@
 #ifndef __VK_OPTIONS_PAGE_H
 #define __VK_OPTIONS_PAGE_H
 
-#include <QFrame>
+#include <QtWidgets/QFrame>
 #include <QHash>
 #include <QList>
-#include <QVBoxLayout>
-#include <QWidget>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 #include "objects/vk_objects.h"
 #include "options/vk_option.h"

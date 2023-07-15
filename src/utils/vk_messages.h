@@ -21,11 +21,11 @@
 #ifndef __VK_MESSAGES_H
 #define __VK_MESSAGES_H
 
-#include <QDialog>
-#include <QLabel>
-#include <QPushButton>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QString>
-#include <QWidget>
+#include <QtWidgets/QWidget>
 
 
 

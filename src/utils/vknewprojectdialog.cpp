@@ -23,10 +23,10 @@
 #include "utils/vk_config.h"
 
 #include <QDir>
-#include <QGroupBox>
-#include <QLabel>
-#include <QPushButton>
-#include <QVBoxLayout>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 
 #define LBL_STYLE_WARN "QLabel { background-color : red; color : black; }"
 #define EDIT_STYLE_WARN "QLineEdit { color: red }"

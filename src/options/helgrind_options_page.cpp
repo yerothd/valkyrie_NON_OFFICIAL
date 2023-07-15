@@ -24,7 +24,7 @@
 #include "options/widgets/opt_base_widget.h"
 #include "utils/vk_utils.h"
 
-#include <QGroupBox>
+#include <QtWidgets/QGroupBox>
 
 
 

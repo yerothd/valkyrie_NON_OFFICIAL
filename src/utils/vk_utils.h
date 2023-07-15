@@ -24,7 +24,7 @@
 #include <iostream>
 
 #include <QString>
-#include <QFileDialog>
+#include <QtWidgets/QFileDialog>
 
 using namespace std;
 

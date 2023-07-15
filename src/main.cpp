@@ -19,7 +19,7 @@
 ****************************************************************************/
 
 
-#include <QApplication>
+#include <QtWidgets/QApplication>
 
 #include "mainwindow.h"
 #include "objects/valkyrie_object.h"

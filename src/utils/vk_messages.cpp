@@ -25,12 +25,12 @@
 #include <stdlib.h>           /* exit errno */
 #include <stdio.h>            /* vsnprintf */
 
-#include <QApplication>
-#include <QHBoxLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QKeyEvent>
 #include <QObjectList>
 #include <QPixmap>
-#include <QStyle>
+#include <QtWidgets/QStyle>
 
 
 /***************************************************************************/

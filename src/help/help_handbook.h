@@ -21,12 +21,12 @@
 #ifndef __VK_HELP_HANDBOOK_H
 #define __VK_HELP_HANDBOOK_H
 
-#include <QComboBox>
-#include <QMainWindow>
-#include <QMenu>
-#include <QMenuBar>
-#include <QStatusBar>
-#include <QTextBrowser>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 
 
 

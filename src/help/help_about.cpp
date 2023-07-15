@@ -23,11 +23,11 @@
 #include "utils/vk_utils.h"
 
 #include <QFile>
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QVBoxLayout>
 #include <QPixmap>
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 #include <QTextStream>
 
 /*!

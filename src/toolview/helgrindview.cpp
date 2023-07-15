@@ -24,13 +24,13 @@
 #include "utils/vk_messages.h"
 #include "utils/vk_utils.h"
 
-#include <QAction>
-#include <QApplication>
-#include <QLabel>
-#include <QMenuBar>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QMenuBar>
 #include <QProcess>
-#include <QToolBar>
-#include <QVBoxLayout>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 
 
 //TODO

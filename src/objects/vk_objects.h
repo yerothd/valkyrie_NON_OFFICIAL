@@ -23,7 +23,7 @@
 
 #include <QObject>
 #include <QList>
-#include <QWidget>
+#include <QtWidgets/QWidget>
 
 #include "options/vk_option.h"
 

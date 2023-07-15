@@ -21,12 +21,12 @@
 #ifndef __VK_HELP_CONTEXT_H
 #define __VK_HELP_CONTEXT_H
 
-#include <QAction>
+#include <QtWidgets/QAction>
 #include <QHash>
 #include <QList>
 #include <QString>
-#include <QToolButton>
-#include <QWidget>
+#include <QtWidgets/QToolButton>
+#include <QtWidgets/QWidget>
 
 
 // Forward decls
